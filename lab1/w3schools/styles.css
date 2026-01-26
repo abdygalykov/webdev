@@ -1,0 +1,8 @@
+th, td{
+    padding: 15px;
+    border-spacing: 30px;
+}
+
+td:nth-child(even){
+    background-color: aliceblue;
+}

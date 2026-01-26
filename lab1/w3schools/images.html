@@ -43,3 +43,25 @@ default - defines the entire region
     </body>
 </html>
 
+<p style="background-image: url('img_girl.jpg');"></p> <!-- to add background image-->
+
+<!-- if you would like to get rid of repetition of background image, just write-->
+
+<style>
+    body {
+        background-image: url("example_img.jpg");
+        background-repeat: no repeat;
+    }
+</style>
+
+<picture>
+    <source srcset="animated_cat.gif">
+    <source srcset="animated_cat2.gif">
+    <img src="img_beatles.png" alt="beatles" style="width:auto">
+</picture>
+
+<!-- some browsers or devices do not support some types of images, therefore you can solve this problem
+by adding many sources of images, that users from any devices can see what's on your web site-->
+
+
+

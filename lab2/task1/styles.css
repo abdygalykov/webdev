@@ -171,13 +171,11 @@ body {
     display: inline-block;
 }
 
-/* Кнопка "+" в языках */
 .languages button {
     font-weight: bold;
     cursor: pointer;
 }
 
-/* Авторские права */
 .copyright {
     margin-top: 12px;
 }

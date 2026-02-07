@@ -34,7 +34,6 @@ body {
     flex-shrink: 0;
 }
 
-/* Описание под логотипом */
 #description_under_logo {
     font-size: 25px;
     color: #13181f;
@@ -122,12 +121,13 @@ body {
     height: auto;
 }
 .footer hr {
-    border: none;              /* Убираем стандартную границу */
-    height: 1px;               /* Толщина линии */
-    background-color: #ddd;    /* Цвет линии (серый) */
-    width: 90%;                /* Ширина линии (можно подкорректировать) */
-    max-width: 980px;          /* Максимальная ширина, как контейнер футера */
-    margin: 20px auto;         /* Центрируем линию и задаем отступ сверху и снизу */
+    border: none;              
+    height: 1px;               
+    background-color: #ddd;   
+    width: 90%;               
+    max-width: 980px;          
+    margin: 20px auto;       
+    
 }
 
 .footer-inner {

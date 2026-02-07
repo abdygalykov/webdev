@@ -118,6 +118,7 @@ body {
     padding: 24px;
     background: #fff;
     text-align: center;
+    
 }
 
 .card h3 {
@@ -176,8 +177,7 @@ body {
 }
 
 .card ul {
-    margin-top: 20px;
-    list-style: none;
+     margin-top: 20px;
 }
 
 .card ul li {

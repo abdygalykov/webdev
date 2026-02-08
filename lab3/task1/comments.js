@@ -31,8 +31,8 @@ for(let t = 0; t < 3; t++) {
   let juice = press(tomato);
   add(juice, glass);
 }
-//  instead of this, better to use:
 
+//  instead of this, better to use:
 addWhiskey(glass);
 addJuice(glass);
 

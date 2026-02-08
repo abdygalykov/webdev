@@ -11,6 +11,7 @@ if (year == 2015) {
   alert( 'How can you be so wrong?' ); // any value except 2015
 }
 
+
 let age = prompt('age?', 18);
 
 let message = (age < 3) ? 'Hi, baby!' :

@@ -7,13 +7,14 @@ import { RouterOutlet, RouterLink } from '@angular/router';
   <nav>
       <a routerLink="/">Home</a> | 
       <a routerLink="/user">User</a>
-    </nav>
+  </nav>
 
   <hr />
   <a routerLink="/">Home</a>
   <a routerLink="/user">User</a>
   `,
-  imports: [RouterOutlet, RouterLink]
+  imports: [RouterLink]
 })
 export class App {
+
 }

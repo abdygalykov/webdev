@@ -1,10 +1,7 @@
 import { Routes } from '@angular/router';
-import { Home } from './home';
+import { User } from './user'; // твой компонент
 
 export const routes: Routes = [
-    {
-        path: '',
-        title: 'App home page',
-        component: Home
-    }
+  { path: 'user', component: User },
+  // { path: '', component: HomeComponent }, // если есть главная
 ];

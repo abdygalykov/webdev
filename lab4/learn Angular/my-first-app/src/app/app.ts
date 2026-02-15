@@ -19,7 +19,4 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet]
 })
 export class App {
-  logoUrl = '/logo.svg';
-  logoAlt = 'Angular logo';
-  username = 'youngTech';
 }

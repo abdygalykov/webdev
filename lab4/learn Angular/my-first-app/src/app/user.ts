@@ -1,13 +1,9 @@
-import {Component, input} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector: 'app-user',
-    standalone: true,
-    template:`
-    <p> Username: Dimash</p>
-    <p>occupation: {{occupation()}}</p>
-    `,
+  selector: 'app-user',
+  template: ` <div>Username: {{ username }}</div> `,
 })
-export class User{
-    occupation = input<string>();
+export class User {
+  username = 'youngTech';
 }

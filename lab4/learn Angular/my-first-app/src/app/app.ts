@@ -1,11 +1,18 @@
+//In this activity, you'll learn how to add an event handler.
 import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   template: `
-  <div [contentEditable]="isEditable"></div>
+  <section (mouseover)="showSecretMessage()">
+    {{message}}
+  </section>
   `,
 })
 export class App {
-  isEditable = true;
+  message ='';
+
+  showSecretMessage(){
+    this.message = 'Way to go';
+  }
 }

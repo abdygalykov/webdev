@@ -1,18 +1,15 @@
-//In this activity, you'll learn how to add an event handler.
-import {Component} from '@angular/core';
+// In this activity, you'll learn how to use the input() function to send information to components.
+import { Component } from '@angular/core';
+import { User } from "./user";
 
 @Component({
   selector: 'app-root',
+  standalone: true, // Добавь это
+  imports: [User],  // Добавляем User сюда
   template: `
-  <section (mouseover)="showSecretMessage()">
-    {{message}}
-  </section>
+    <h1>Welcome to Angular</h1>
+    <app-user occupation="Angular development"></app-user>
   `,
 })
 export class App {
-  message ='';
-
-  showSecretMessage(){
-    this.message = 'Way to go';
-  }
 }

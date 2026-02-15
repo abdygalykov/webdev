@@ -1,28 +1,74 @@
-// When working with components it may be required to notify other 
-// components that something has happened. 
-// Perhaps a button has been clicked, an item has been added/removed 
-// from a list or some other important update has occurred. 
-// In this scenario components need to communicate with parent components.
-import { Component } from '@angular/core';
-import { Child } from './child';
+/*
+Deferred Loading (отложенная загрузка) в Angular — 
+это мощная современная функция (появилась в Angular 17+),
+ которая позволяет загружать части страницы не сразу, 
+а только тогда, когда они действительно нужны пользователю. 
+*/
+
+import {Component} from '@angular/core';
+import {Comments} from './comments';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [Child],
   template: `
-    <app-child (addItemEvent)="addItem($event)" />
-    <ul>
-      @for (item of items; track item) {
-        <li>{{ item }}</li>
-      }
-    </ul>
-  `,
-})
-export class App {
-  items = ['🍎', '🍌', '🍒'];
+    <div>
+      <h1>How I feel about Angular</h1>
+      <article>
+        <p>
+          Angular is my favorite framework, and this is why. Angular has the coolest deferrable view
+          feature that makes defer loading content the easiest and most ergonomic it could possibly
+          be. The Angular community is also filled with amazing contributors and experts that create
+          excellent content. The community is welcoming and friendly, and it really is the best
+          community out there.
+        </p>
+        <p>
+          I can't express enough how much I enjoy working with Angular. It offers the best developer
+          experience I've ever had. I love that the Angular team puts their developers first and
+          takes care to make us very happy. They genuinely want Angular to be the best framework it
+          can be, and they're doing such an amazing job at it, too. This statement comes from my
+          heart and is not at all copied and pasted. In fact, I think I'll say these exact same
+          things again a few times.
+        </p>
+        <p>
+          Angular is my favorite framework, and this is why. Angular has the coolest deferrable view
+          feature that makes defer loading content the easiest and most ergonomic it could possibly
+          be. The Angular community is also filled with amazing contributors and experts that create
+          excellent content. The community is welcoming and friendly, and it really is the best
+          community out there.
+        </p>
+        <p>
+          I can't express enough how much I enjoy working with Angular. It offers the best developer
+          experience I've ever had. I love that the Angular team puts their developers first and
+          takes care to make us very happy. They genuinely want Angular to be the best framework it
+          can be, and they're doing such an amazing job at it, too. This statement comes from my
+          heart and is not at all copied and pasted. In fact, I think I'll say these exact same
+          things again a few times.
+        </p>
+        <p>
+          Angular is my favorite framework, and this is why. Angular has the coolest deferrable view
+          feature that makes defer loading content the easiest and most ergonomic it could possibly
+          be. The Angular community is also filled with amazing contributors and experts that create
+          excellent content. The community is welcoming and friendly, and it really is the best
+          community out there.
+        </p>
+        <p>
+          I can't express enough how much I enjoy working with Angular. It offers the best developer
+          experience I've ever had. I love that the Angular team puts their developers first and
+          takes care to make us very happy. They genuinely want Angular to be the best framework it
+          can be, and they're doing such an amazing job at it, too. This statement comes from my
+          heart and is not at all copied and pasted.
+        </p>
+      </article>
 
-  addItem(newItem: string) {
-    this.items.push(newItem);
-  }
-}
+      @defer (on viewport) {
+        <comments />
+      } @placeholder {
+        <p>Future comments</p>
+      } @loading (minimum 2s) {
+        <p>Loading comments...</p>
+      }
+    </div>
+  `,
+  imports: [Comments],
+})
+export class App {}

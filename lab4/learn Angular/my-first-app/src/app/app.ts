@@ -11,10 +11,14 @@ export class User {
 @Component({
   selector: 'app-root',
   template: `
-    <section>
-      <app-user />
-    </section>
-  `,
-  imports: [User],
+    @if (isServerRunning){
+      <span>Yes, the server is running </span>
+    }
+    @else{
+      <span>No, the server is not running </span>
+    }
+  `
 })
-export class App {}
+export class App {
+  isServerRunning = true;
+}

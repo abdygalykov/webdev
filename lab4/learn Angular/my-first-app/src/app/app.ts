@@ -1,15 +1,28 @@
-// In this activity, you'll learn how to use the input() function to send information to components.
+// When working with components it may be required to notify other 
+// components that something has happened. 
+// Perhaps a button has been clicked, an item has been added/removed 
+// from a list or some other important update has occurred. 
+// In this scenario components need to communicate with parent components.
 import { Component } from '@angular/core';
-import { User } from "./user";
+import { Child } from './child';
 
 @Component({
   selector: 'app-root',
-  standalone: true, // Добавь это
-  imports: [User],  // Добавляем User сюда
+  standalone: true,
+  imports: [Child],
   template: `
-    <h1>Welcome to Angular</h1>
-    <app-user occupation="Angular development"></app-user>
+    <app-child (addItemEvent)="addItem($event)" />
+    <ul>
+      @for (item of items; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
   `,
 })
 export class App {
+  items = ['🍎', '🍌', '🍒'];
+
+  addItem(newItem: string) {
+    this.items.push(newItem);
+  }
 }

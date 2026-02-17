@@ -1,0 +1,67 @@
+<!--html also allows animated gifts to be used-->
+<img src="programming.gif" alt="Computer Man" style="width:48px;height:48px;">
+
+<p><img src="smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+The image will float to the right of the text.</p>
+   
+<p><img src="smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;">
+The image will float to the left of the text.</p>
+
+
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+<map name="workmap">
+    <area shape="rect" coords="34, 44, 270, 350" href="computer.htm">
+</map>
+
+<!--
+You must define the shape of the clickable area, and you can choose one of these values:
+
+rect - defines a rectangular region
+circle - defines a circular region
+poly - defines a polygonal region
+default - defines the entire region
+-->
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1> Image Maps</h1>
+
+        <p>Click on the cup of coffee to execute a JavaScript function:</p>
+
+        <img src="images.jpeg" width="150" height="150" alt="Workplace" usemap="workmap">
+
+        <map name="workmap">
+            <area shape="circle" coords="135,105,80" href="#" alt="Coffee cup">
+        </map>
+
+        <script>
+            function myFunction(){
+                alert("You clicked the button");
+            }
+        </script>
+    </body>
+</html>
+
+<p style="background-image: url('img_girl.jpg');"></p> <!-- to add background image-->
+
+<!-- if you would like to get rid of repetition of background image, just write-->
+
+<style>
+    body {
+        background-image: url("example_img.jpg");
+        background-repeat: no repeat;
+    }
+</style>
+
+<picture>
+    <source srcset="animated_cat.gif">
+    <source srcset="animated_cat2.gif">
+    <img src="img_beatles.png" alt="beatles" style="width:auto">
+</picture>
+
+<!-- some browsers or devices do not support some types of images, therefore you can solve this problem
+by adding many sources of images, that users from any devices can see what's on your web site-->
+
+
+

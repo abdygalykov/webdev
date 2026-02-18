@@ -10,17 +10,6 @@ form.addEventListener('submit', function (event) {
         return;
     }
 
-    const existingTasks = Array.from(todoList.querySelectorAll('.todo-text'));
-    
-    const isDuplicate = existingTasks.some(item => 
-        item.textContent.toLowerCase() === taskText.toLowerCase()
-    );
-
-    if (isDuplicate) {
-        alert('Такая задача уже есть в списке!');
-        return; 
-    }
-
     addTodoItem(taskText);
     input.value = '';
 });

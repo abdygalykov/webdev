@@ -6,7 +6,6 @@
 }
 
 body {
-    /* Soft gradient background */
     background: linear-gradient(135deg, #f5d1b0 0%, #e6b980 100%);
     min-height: 100vh;
     display: flex;
@@ -80,7 +79,6 @@ body {
     background-color: #333;
 }
 
-/* Decoration for the List Items */
 .todo-list {
     list-style: none;
     margin-top: 1rem;
@@ -96,7 +94,6 @@ body {
     border-radius: 10px;
     border: 1px solid #f0f0f0;
     transition: transform 0.2s, box-shadow 0.2s;
-    /* Entry animation */
     animation: fadeIn 0.4s ease;
 }
 
@@ -116,7 +113,6 @@ body {
     gap: 1rem;
 }
 
-/* Fancy Checkbox */
 input[type="checkbox"] {
     width: 18px;
     height: 18px;

@@ -38,6 +38,11 @@ function addTodoItem(text) {
 
     deleteButton.addEventListener('click', function () {
         todoList.removeChild(listItem);
+
+        const isConfirmed = confirm("are you sure?")
+        if(isConfirmed){
+            todoList.removeChild();
+        }
     });
 
     leftSection.appendChild(checkbox);

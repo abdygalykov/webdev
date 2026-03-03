@@ -1,0 +1,25 @@
+<div class="spinner" *ngIf="loading">
+  <div class="spinner-ring"></div>
+  <p>Loading photos...</p>
+</div>
+
+<div *ngIf="!loading">
+  <h1>Photos for Album #{{ albumId }}</h1>
+  <button (click)="router.navigate(['/albums', albumId])">← Back</button>
+  <div class="grid">
+    <div *ngFor="let photo of photos" class="photo-card">
+      <img [src]="photo.thumbnailUrl" [alt]="photo.comment" />
+      <div class="card-body">
+        <p class="reviewer">{{ photo.reviewerName }}</p>
+        <div class="stars">
+          <span
+            *ngFor="let s of getStars(photo.rating)"
+            [style.color]="s === 'filled' ? '#e8ff47' : '#444'"
+            style="font-size: 18px;"
+          >★</span>
+        </div>
+        <p class="comment">{{ photo.comment }}</p>
+      </div>
+    </div>
+  </div>
+</div>

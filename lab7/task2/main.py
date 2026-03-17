@@ -15,6 +15,7 @@ def main():
         print(a.speak())    
         print()
 
+    print(hamster.speak())
 
 if __name__ == "__main__":
     main()

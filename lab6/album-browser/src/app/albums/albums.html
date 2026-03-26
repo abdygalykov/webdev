@@ -1,0 +1,39 @@
+<div class="albums">
+  <div class="header">
+    <h1>Albums</h1>
+    <span class="count" *ngIf="!loading">{{ filteredAlbums().length }} albums</span>
+  </div>
+
+  <!-- Spinner -->
+  <!-- <div class="spinner" *ngIf="loading">
+    <div class="spinner-ring"></div>
+    <p>Loading albums...</p>
+  </div> -->
+
+  <div *ngIf="!loading">
+    <!-- Search & Sort -->
+    <div class="controls">
+      <input
+        type="text"
+        placeholder="Search albums..."
+        [(ngModel)]="searchQuery"
+        class="search-input"
+      />
+      <select [(ngModel)]="sortOrder" class="sort-select">
+        <option value="id-asc">ID ↑</option>
+        <option value="id-desc">ID ↓</option>
+        <option value="title-asc">Title A→Z</option>
+        <option value="title-desc">Title Z→A</option>
+      </select>
+    </div>
+
+    <p class="empty" *ngIf="filteredAlbums().length === 0">No albums found.</p>
+
+    <ul>
+      <li *ngFor="let album of filteredAlbums()" (click)="goToDetail(album.id)">
+        <span>#{{ album.id }} — {{ album.title }}</span>
+        <button (click)="$event.stopPropagation(); deleteAlbum(album.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+</div>

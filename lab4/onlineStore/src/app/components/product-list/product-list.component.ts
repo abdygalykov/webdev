@@ -20,7 +20,7 @@ export class ProductListComponent implements OnInit {
         name: 'Apple iPhone 14 128Gb черный',
         description: 'Смартфон Apple iPhone 14 с диагональю 6.1 дюйма, процессор A15 Bionic, двойная камера 12 МП, поддержка 5G',
         price: 378790,
-        rating: 4.8,
+        rating: 3.5,
         image: 'https://resources.cdn-kaspi.kz/img/m/p/hb8/h19/86042949648414.png?format=gallery-large',
         images: [
           'https://resources.cdn-kaspi.kz/img/m/p/hb8/h19/86042949648414.png?format=gallery-large',

@@ -9,13 +9,14 @@ def main():
 
     animals = [dog, cat, hamster, parrot, animal]
 
-    for a in animals:
-        print(a)             
-        print(a.info())       
-        print(a.speak())    
+    for method in animals:
+        print(method)             
+        print(method.info())       
+        print(method.speak())    
         print()
 
     print(hamster.speak())
+    print(hamster.run_in_wheel())
 
 if __name__ == "__main__":
     main()

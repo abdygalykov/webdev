@@ -4,15 +4,14 @@ export interface Product {
   description: string;
   price: number;
   rating: number;
-  image: string;
   images: string[];
   link: string;
-  categoryId: number;
+  category_id: number;
+  category: string;
+  count: number;
+  is_active: boolean;
   likes: number;
 }
-
-
-
 
 
 

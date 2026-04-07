@@ -21,9 +21,9 @@ export class ProductItemComponent {
 
   get allImages(): string[] {
     if (!this.product.images || this.product.images.length === 0) {
-      return [this.product.image];
+      return [];
     }
-    return [this.product.image, ...this.product.images];
+    return this.product.images;
   }
 
   nextImage(): void {

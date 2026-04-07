@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{base_url}}/api/products/"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Samsung Galaxy S24",
+      "price": 420000,
+      "description": "Flagship Android smartphone with AI features.",
+      "count": 8,
+      "is_active": true,
+      "category": 1
+    }
+order: 3000

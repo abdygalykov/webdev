@@ -14,20 +14,47 @@ import { NgFor, NgIf } from '@angular/common';
 })
 export class AppComponent implements OnInit {
 
+  minPrice: number | null = null;
+  maxPrice: number | null = null;
+  sortOrder: string = 'asc';
+
+  selectCategory(categoryId: number): void {
+      this.selectedCategoryId = categoryId;
+      this.loadProducts();
+  }
+
+  loadProducts(): void {
+      if (this.selectedCategoryId === null) return;
+      this.productService.getProductsByCategory(
+          this.selectedCategoryId,
+          this.minPrice ?? undefined,
+          this.maxPrice ?? undefined,
+          this.sortOrder
+      ).subscribe(data => {
+          this.filteredProducts = data;
+      });
+  }
+
+  applyFilter(): void {
+      this.loadProducts();
+  }
+
   categories: Category[] = [];
-
   selectedCategoryId: number | null = null;
-
   filteredProducts: Product[] = [];
 
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.categories = this.productService.getCategories();
+    this.productService.getCategories().subscribe(data => {
+      this.categories = data;
+    });
   }
 
   selectCategory(categoryId: number): void {
     this.selectedCategoryId = categoryId;
-    this.filteredProducts = this.productService.getProductsByCategory(categoryId);
+    this.productService.getProductsByCategory(categoryId).subscribe(data => {
+      this.filteredProducts = data;
+    });
   }
 }

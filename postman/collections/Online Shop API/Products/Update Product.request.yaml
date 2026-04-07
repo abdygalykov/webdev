@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{base_url}}/api/products/1/"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: >-
+    {
+      "name": "iPhone 13",
+      "price": 299000,
+      "description": "Powerful Apple smartphone with great camera and performance.",
+      "count": 15,
+      "is_active": true,
+      "category": 1
+    }
+order: 4000
